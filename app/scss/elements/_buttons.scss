@@ -1,0 +1,33 @@
+a,
+[type="submit"],
+button{
+	&.btn {
+		@include font(bold);
+
+		padding: space(p) space(base);
+
+		text-transform: uppercase;
+		color: color(light);
+
+		background-color: color(primary);
+		border: 0;
+
+		&.btn-secondary {
+			background-color: color(secondary);
+		}
+
+		&.btn-border {
+			letter-spacing: 2px;
+			color: color(light);
+
+			background-color: transparent;
+			border: 3px solid color(light);
+
+			&:hover {
+				color: color(light);
+				background-color: color(secondary);
+				border: 3px solid transparent;
+			}
+		}
+	}
+}

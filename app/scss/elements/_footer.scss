@@ -1,0 +1,179 @@
+footer {
+    @include font(black);
+
+    position: relative;
+
+    padding: space(xg) 0;    
+    
+    color: color(light);
+
+    background-color: color(primary, darker);
+
+    &:before {
+        @include generated-content(100%, 450px);
+
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: color(primary, darken);
+    }
+
+    .container {
+        @include responsive(large) {
+            min-height: 1200px;
+        }
+
+        position: relative;
+
+        min-height: 1500px;
+        
+        &:before {
+            @include generated-content(625px, 885px);
+
+            @include responsive(large) {
+                @include generated-content(1060px, 1152px);
+
+                margin: auto auto 100px;    
+
+                background-image: url(../images/bg-footer.png);
+            }
+    
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+    
+            margin: 460px auto auto 150px;
+    
+            background-image: url(../images/bg-footer--mobile.png);
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+    }
+
+
+    .logo {
+        @include responsive(large) {
+            margin: 500px auto auto 220px;
+        }
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        margin: 510px auto auto 0;
+
+        z-index: 2;
+    }
+
+    .ruy {
+        @include responsive(large) {
+            z-index: 2;
+            transform: scale(1);
+
+            height: 850px;
+            margin: -100px auto auto 303px;
+        }
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        transform: scale(.8);
+        z-index: 0;
+
+        margin: -85px auto auto -82px;
+
+        width: 750px;
+        height: 1354px;
+
+        background-image: url(../images/img-ruy-desktop.png);
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
+
+    .bg {
+        @include responsive(large) {
+            margin: 423px 15px auto auto;
+        }
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        margin: 903px auto auto -55px;
+        
+        z-index: 2;
+        
+        width: 499px;
+        height: 486px;
+        padding: 84px 0;
+        
+        background-image: url(../images/bg-footer-box.png);
+        background-position: 35px 0;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .cite {
+        @include font(base);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        margin: auto auto space(g);
+        width: 380px;
+        height: 50px;
+    }
+    
+    p {
+        &:first-child {
+            font-size: font-size(medium);
+            color: color(primary);
+
+            + p {
+                font-size: font-size(xbig); 
+            }
+        }
+
+        small {
+            @include font(bold);
+
+            font-size: font-size(small);
+            line-height: .5;
+            color: color(light);
+
+            strong {
+                @include font(black);
+            }
+        }
+    }
+
+    ul {
+        li {
+            font-size: font-size(medium);
+            color: color(tertiary);
+
+            i {
+                color: color(light);
+            }
+
+            .fa-facebook {
+                color: color(primary, darken);
+            }
+        }
+    }
+}

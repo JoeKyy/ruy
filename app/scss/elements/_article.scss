@@ -1,0 +1,270 @@
+.page {
+    article {
+        position: relative;
+
+        margin: -50px 0 0;        
+
+        &:before {
+            @include generated-content(1250px, 1339px);
+            @include responsive(large) {
+                left: 0;
+            }
+
+            position: absolute;
+            top: 0;
+            left: -285px;
+            right: 0;
+            bottom: 0;
+
+            margin: 0px auto auto -150px;
+
+            background-image: url(../images/bg-page.png);
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+
+        &#plano-de-acao {
+            &:before {
+                @include generated-content(1258px, 1864px);
+                @include responsive(large) {
+                    left: 0;
+                }
+    
+                position: absolute;
+                top: 0;
+                left: -285px;
+                right: 0;
+                bottom: 0;
+    
+                margin: 0px auto auto -150px;
+    
+                background-image: url(../images/bg-page-plano.png);
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        h1 {
+            @include font(black);
+            @include responsive(large) {
+                font-size: font-size(xxbig) * 2.2;
+                line-height: .9; 
+            }
+
+            display: inline-flex;
+            
+            margin: (space(xg) * 2) 0 0;
+
+            font-size: (font-size(xbig) * 1.7);
+            color: color(light);
+        }
+
+        p {
+            @include font(black);
+            @include responsive(large) {
+                margin: space(xg) 0 (space(xg) * 2);
+
+                font-size: font-size(big) * 1.3;
+                line-height: .9; 
+            }
+
+            margin: (space(xg) * 3) 0 (space(xg));
+
+            font-size: (font-size(large));
+            color: color(primary, darken);
+
+            strong {
+                @include font(black);
+
+                color: color(secondary);
+            }
+        }
+
+        .plans-container {
+            position: relative;
+
+            margin: (space(xg) * 2) 0 0;
+
+            &:before {
+                @include generated-content(3px, 100%);
+                @include responsive(large) {
+                    left: 120px;
+                }
+
+                position: absolute;
+                top: 0;
+                left: 110px;
+
+                background-color: color(light);
+            }
+
+            > div {
+                position: relative;
+
+                &:before {
+                    @include font(black);
+                    @include responsive(large) {
+                        left: -50px;
+
+                        transform: scale(1);
+                    }
+
+                    position: absolute;
+                    top: 0;
+                    left: -30px;
+
+                    z-index: 1000;
+                    transform: scale(.7);
+
+                    content: attr(data-month);
+
+                    display: block;
+                    padding: space(p) space(m);
+
+                    background-color: color(secondary);
+
+                    font-size: font-size(large);
+                    color: color(light);
+                    
+                    text-transform: capitalize;
+                }
+
+                &:after {
+                    @include generated-content(30px, 30px);
+                    @include responsive(large) {
+                        left: 107px;
+
+                        transform: scale(1);
+                    }
+
+                    position: absolute;
+                    top: 6px;
+                    left: 97px;
+
+                    transform: scale(.5);
+
+                    background-color: color(secondary);
+                    border-radius: 50%;
+                    border: 3px solid color(light);
+                }
+
+                ul {
+                    @include responsive(large) {
+                        padding: 0 0 0 (space(xg) * 3);
+                    }
+
+                    padding: 0 0 0 (space(xg) * 2.5);
+
+                    li {
+                        @include responsive(large) {
+                            height: 295px;
+                        }
+                        
+                        margin: 0 0 space(xg);
+
+                        background-color: color(light);
+
+                        img {
+                            width: 100%;
+                            max-width: 100%;
+                        }
+
+                        p {
+                            @include font(base);
+                            @include responsive(large) {
+                                padding: 0;
+
+                                font-size: font-size(medium);
+                            }
+
+                            margin: 0;
+                            padding: 0 space(base) space(m);
+
+                            font-size: font-size(medium);
+                            line-height: 1.5;
+                            color: color(primary, darken);
+
+                            &:first-child {
+                                @include font(black);
+                                @include responsive(large) {
+                                    font-size: font-size(large);
+                                }
+
+                                margin: space(m) 0;
+
+                                font-size: font-size(large);
+                                color: color(secondary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .proposta-content {
+            img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            p {
+                @include font(base);
+                @include responsive(large) {
+                    padding: 0;
+
+                    font-size: font-size(medium);
+                }
+
+                margin: 0;
+                padding: 0 space(base) space(m);
+
+                font-size: font-size(medium);
+                line-height: 1.5;
+                color: color(primary, darken);
+
+                &:first-child {
+                    @include font(black);
+                    @include responsive(large) {
+                        font-size: font-size(large);
+                    }
+
+                    margin: space(m) 0;
+
+                    font-size: font-size(large);
+                    color: color(secondary);
+                }
+            }
+        }
+    }
+}
+
+.proposta--slider {
+    .slick-dots {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    
+        margin: auto auto 0px;
+        width: 230px;
+        height: 25px;
+    
+        li {
+            @include hidden-text();
+    
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: space(p);
+    
+            background-color: color(tertiary);
+            border-radius: 50%;
+    
+            &.slick-active {
+                background-color: color(primary, darken);
+            }
+        }
+    }
+}

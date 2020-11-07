@@ -1,0 +1,705 @@
+main {
+    position: relative;
+    z-index: 1;
+
+    margin-top: -100px;
+    padding-top: 100px;
+
+    min-height: calc(100vh - 100px);
+
+    background-color: color(primary, darker);
+
+    &:before {
+        @include generated-content(100%, 325px);
+
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+
+        background-color: color(tertiary);
+    }
+
+    &:after {
+        @include generated-content(100%, 1817px);
+
+        position: absolute;
+        z-index: -1;
+        top: -460px;
+        left: 0;
+
+        background-image: url(../images/bg-home-highlight--desktop.png);
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
+
+    section {
+        position: relative;
+
+        width: 100%;
+
+        &.highlight {
+            @include responsive(large) {
+                padding-top: space(xg);
+            }
+
+            padding-top: (space(xg) * 1.5);
+            
+
+            figure {
+                position: relative;
+
+                width: 100%;
+
+                figcaption {
+                    @include responsive(large) {
+                        transform: inherit;
+
+                        margin: -15px auto auto 50vh;
+                    }
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    
+                    transform: scale(0.4);
+                    
+                    width: 500px;
+                    height: 500px;
+
+                    margin: -225px auto auto -140px;
+                    
+                    &:before {
+                        @include generated-content(479px, 467px);
+
+                        position: absolute;
+                        top: -140px;
+                        left: -415px;
+                        right: 0;
+                        bottom: 0;
+
+                        margin: auto;
+
+                        background-image: url(../images/bg-highlight.png);
+                        background-position: top center;
+                        background-repeat: no-repeat;
+                    }
+
+                    h2 {
+                        @include font(bold);
+
+                        position: relative;
+                        z-index: 1;
+
+                        font-size: font-size(xbig);
+                        color: color(light);
+
+                        strong {
+                            @include font(black);
+                            @include responsive(large) {
+                                font-size: (font-size(xxbig) * 2);
+                            }
+
+                            display: block;
+                            width: 600px;
+
+                            font-size: (font-size(xxbig) * 1.5);
+                        }
+                    }
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .btn {
+                @include responsive(large) {
+                    top: -150px;
+                }
+
+                position: relative;
+                top: -80px;
+
+                transform: scale(1);
+            }
+        }
+
+        &.plans {
+            padding: 0 0 (space(xg) * 2);
+
+            &::before {
+                @include responsive(large) {
+                    @include generated-content(1098px, 1218px);
+
+                    margin: 0 auto auto auto;
+                }
+
+                @include generated-content(1098px, 900px);
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                
+                margin: -13vw -38vh auto;
+
+                background-image: url(../images/bg-home-plans--desktop.png);
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+
+            h3 {
+                @include font(black);
+                @include responsive(large) {
+                    font-size: font-size(xxbig) * 2.2;
+                    line-height: .9; 
+                }
+
+                margin: (space(xg) * 1.5) 0 0;
+
+                font-size: (font-size(xbig) * 2);
+                color: color(light);
+            }
+
+            p {
+                @include font(black);
+                @include responsive(large) {
+                    font-size: font-size(big);
+                }
+
+                margin: (space(xg)) 0 (space(xg) * 2);
+
+                font-size: font-size(large);
+                line-height: 1;
+                color: color(light);
+
+                strong {
+                    @include font(black);
+
+                    color: color(tertiary);
+                }
+
+            }
+
+            .menu-content {
+                @include font(black);
+                
+                position: relative;
+                z-index: 2;
+
+                width: 100%;
+                
+                color: color(light);
+
+                &:before {
+                    @include generated-content(1223px, 303px);
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: -1;
+
+                    margin: -38px auto auto -145px;
+
+                    background-image: url(../images/bg-tab-menu.png);
+                    background-position: top left;
+                    background-repeat: no-repeat;
+                }
+
+                p {
+                    strong {
+                        color: #d4dd3f;
+                    }
+                }
+
+                ul {
+                    @include responsive(large) {
+                        margin: space(base) 0 0;
+                    }
+
+                    position: relative;
+
+                    margin: 0;
+
+
+                    li {
+                        @include font(black);
+                        @include responsive(large) {
+                            margin: space(base) space(g);
+
+                            font-size: font-size(xbig);
+                        }
+
+                        margin: 0 space(p) space(p);
+
+                        font-size: font-size(big);
+
+
+                        color: #ffffff;
+                        text-transform: uppercase;
+                        
+                        &.active {
+                            position: relative;
+
+                            color: color(tertiary);
+
+                            &:before {
+                                @include generated-content(100%, 100%);
+
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: auto;
+                                z-index: -1;
+                                
+                                background-image: url(../images/bg-month.png);
+                                background-position: top left;
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .tab-content {
+                @include responsive(large) {
+                    width: 1034px;
+                    
+                    padding: space(g);
+                }
+
+                position: relative;
+                z-index: 3;
+
+                width: 100%;
+                height: 350px;
+
+                margin: 0;
+                padding: 0;
+
+                &:before {
+                    @include generated-content(1034px, 350px);
+                    @include responsive(large) {
+                        left: 0;
+                    }
+
+                    position: absolute;
+                    top: 0;
+                    left: -5vh;
+                    z-index: -1;
+                    
+                    background-image: url(../images/bg-tab.png);
+                    background-position: top left;
+                    background-repeat: no-repeat;
+                }
+
+                .slick-slide {
+                    @include responsive(large) {
+                        width: inherit;
+                    }
+                    position: relative;
+                    overflow: hidden;
+
+                    counter-increment: order;
+
+                    height: 317px;
+
+                    &:before {
+                        @include font(black);
+                        @include responsive(large) {
+                            bottom: -150px;
+                            left: 35px;
+
+                            font-size: (font-size(xxbig) * 5);
+                        }
+
+                        content: counter(order);
+
+                        position: absolute;
+                        bottom: 20vw;
+                        left: -5vh;
+                        
+                        width: 50px;
+
+                        font-size: (font-size(xxbig) * 3);
+                        color: color(secondary);
+                    }
+                }
+                
+                .slick-dots {
+                    @include responsive(large) {
+                        transform: scale(1);
+                    }
+
+                    position: relative;
+                    z-index: 1000;
+
+                    transform: scale(.6);
+
+                    display: flex;
+                    justify-content: center;
+                    
+                    width: 327px;
+                    height: 90px;
+
+                    margin: -24px 0 0 auto;
+                    padding: 1rem 0;
+                    
+                    list-style-type: none;
+
+                    &:before {
+                        @include generated-content(327px, 90px);
+
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+
+                        background-image: url(../images/bg-tab-dots.png);
+                        background-position: top left;
+                        background-repeat: no-repeat;
+                    }
+                    
+                        li {
+                            position: relative;
+                            z-index: 10;
+
+                            margin: 0 0.25rem;
+                        }
+                    
+                        button {
+                            @include font(black);
+                            display: block;
+                            
+                            padding: 0 space(base);
+                            
+                            color: color(light);
+                            font-size: (font-size(xbig) * 2);
+
+                            border: none;
+
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                border: none;
+                                outline: none;
+                            }
+                            
+                        }
+                    
+                        li.slick-active button {
+                            color: color(secondary);
+                        }
+                    
+                }
+
+                p {
+                    @include font(base);
+                    @include responsive(large) {
+                        padding: 0 space(xg) 0 (space(xg) * 6);
+
+                        font-size: font-size(large);
+                    }
+
+                    margin: 0;
+                    padding: 0 space(base) 0 (space(xg) * 2);
+
+                    font-size: font-size(medium);
+                    line-height: 1.1;
+                    color: color(primary, darker);
+
+                    &:first-child {
+                        @include font(black);
+                        @include responsive(large) {
+                            font-size: (font-size(xbig) * 1.2);    
+                        }
+
+                        margin: space(g) 0;
+                        
+                        font-size: font-size(large);
+                        color: color(secondary);
+                    }
+                }
+            }
+        }
+        
+            
+        
+        &.guide {
+            padding: 0 0 space(xg);
+
+            &::before {
+                @include generated-content(540px, 526px);
+                @include responsive(large) {
+                    margin: 0 20% auto auto;
+                }
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                
+                margin: -174px -46vw auto auto  ;
+
+                background-image: url(../images/bg-guide.png);
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+
+            h3 {
+                @include font(black);
+                @include responsive(large) {
+                    font-size: font-size(xxbig) * 2.2;
+                    line-height: .9; 
+                }
+
+                margin: (space(xg)) 0 0;
+
+                font-size: font-size(xxbig);
+                color: color(light);
+            }
+            
+            
+            .guide--rotate-title {
+                position: relative;
+                z-index: 1001;
+
+                margin-top: -50px;
+
+                &:before {
+                    @include generated-content(969px, 267px);
+                    @include responsive(large) {
+                        margin: 70px auto auto;
+                    }
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    margin: 70px -245px auto;
+
+                    background-image: url(../images/bg-guide-title.png);
+                    background-position: top center;
+                    background-repeat: no-repeat;
+                }
+
+                .slick-slide {
+                    position: relative;
+                    min-height: 400px;
+
+                    opacity: 0;
+                    transition: all 2s ease-out;
+                    
+                    &.slick-current {
+                        opacity: 1;
+                    }
+
+                    
+                    p {
+                        @include font(black);
+                        @include responsive(large) {
+                            width: 535px;
+
+                            font-size: (font-size(xbig) * 1.5);
+                        }
+    
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+    
+                        margin: 100px auto auto;
+                        padding-left: 140px;
+    
+                        width: 100%;
+                        height: 145px;
+    
+                        font-size: font-size(big);
+                        color: color(light);
+    
+                        span {
+                            @include responsive(large) {
+                                font-size: font-size(xbig);
+                            }
+                            display: block;
+    
+                            font-size: font-size(large);
+                            text-transform: uppercase;
+                            color: color(tertiary);
+                        }
+                    }
+                }
+
+            }
+
+            .guide--rotate-image {
+                @include responsive(large) {
+                    margin-top: -350px;
+                }
+
+                position: relative;
+                z-index: 1001;
+    
+                margin-top: -380px;
+                padding: (space(xg) * 3) 0;
+    
+                .slick-list {
+                    @include responsive(large) {
+                        padding-top: 60px;
+                        max-height: 500px;
+                    }
+                }
+    
+                .slick-slide {
+                    @include responsive(large) {
+                        opacity: 0;
+                        transform: scale(1.5);
+    
+                        &.slick-current {
+                            z-index: 0;
+                            right: 400px;
+                            opacity: .5;
+    
+                            margin-right: (- space(m));
+                            margin-left: (space(m));
+    
+                            &:before {
+                                content: '';
+    
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                z-index: 2;
+    
+                                width: 95%;
+                                height: 95%;
+                                margin: auto;
+
+                                opacity: .6;
+                            }
+    
+                            + .slick-active {
+                                z-index: 1;
+                                opacity: 1;
+    
+                                + .slick-active {
+                                    z-index: 0;
+                                    opacity: 1;
+                                    left: 400px;
+                                    right: inherit;
+                                    opacity: .5;
+    
+                                    margin-left: (- space(m));
+                                    margin-right: space(g);
+    
+                                    &:before {
+                                        content: '';
+    
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        z-index: 2;
+    
+                                        width: 95%;
+                                        height: 95%;
+                                        margin: auto;
+    
+                                        opacity: .6;
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    position: relative;
+                    transition: all .5s ease-out;
+    
+                }
+    
+                figure {
+                    position: relative;
+                }
+            }
+        }
+
+        &.proposal {
+            padding: 0 0 space(xg);
+            
+            &::before {
+                @include generated-content(1275px, 1902px);
+                @include responsive(large) {
+                    margin: auto auto ( - space(xg) * 2);
+                }
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                margin: -715px auto auto -123vw;
+
+                background-image: url(../images/bg-proposal.png);
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+
+            h3 {
+                @include font(black);
+                @include responsive(large) {
+                    font-size: font-size(xxbig) * 2.2;
+                    line-height: .9; 
+                }
+
+                margin: (space(xg)) 0 0;
+
+                font-size: font-size(xxbig);
+                color: color(light);
+            }
+
+            p {
+                @include font(black);
+
+                margin: (space(xg)) 0 (space(xg) * 2);
+
+                font-size: font-size(big);
+                line-height: 1;
+                color: color(light);
+
+                strong {
+                    @include font(black);
+
+                    color: color(tertiary);
+                }
+
+            }
+
+            ul {
+                li {
+                    &:nth-child(2) {
+                        @include responsive(large) {
+                            margin: 0 ( - space(xg) * 1.8);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
